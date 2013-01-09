@@ -23,8 +23,10 @@ http {
   }
 
   server {
-    listen            80;
+    listen            <%= ENV['PORT'] %>;
     server_name       _;
+
+    port_in_redirect off;
 
     root              /app/public;
     index             index.php index.html index.htm;
